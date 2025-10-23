@@ -1,0 +1,10 @@
+// build: spring-boot-starter-web, spring-boot-starter-validation
+// dto/CreateUserRequest.java
+package com.example.demo.dto;
+import jakarta.validation.constraints.*;
+
+public record CreateUserRequest(
+  @NotBlank String name,
+  @Email String email,
+  @Pattern(regexp="\\+?[0-9\\- ]{7,15}") String phone
+) {}
